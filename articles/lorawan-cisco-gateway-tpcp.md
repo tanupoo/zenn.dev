@@ -154,9 +154,9 @@ interface FastEthernet 0/1
 !
 ip default-gateway 10.0.0.1
 !
-username ixmadmin password 8 ****
+username **** password 8 ****
 !
-username lora2017 password 8 ****
+username **** password 8 ****
 !
 ip ssh admin-access
 ip ssh port 22
@@ -409,6 +409,7 @@ GWの特権ユーザと同じでも動作はする。
 事故を防ぐためにLRR管理用のアカウントを作るのがおすすめ。
 
 IOS側でユーザを作る。
+例では、ユーザ名 hogehoge、パスワード puyopuyo
 
 ```
 GW#configure terminal 
