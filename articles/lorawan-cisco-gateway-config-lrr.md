@@ -2,7 +2,7 @@
 title: "Cisco LoRaWAN Gateway: LRRのコンフィグ"
 emoji: "🦝"
 type: "tech"
-topics: [Cisco, LoRaWAN, Actility]
+topics: [Cisco, LoRaWAN, Actility, ThingPark]
 published: false
 created: 2022-03-17
 ---
