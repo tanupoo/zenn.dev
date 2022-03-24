@@ -10,7 +10,7 @@ created: "2022-03-17"
 Actility ThingPark Community Platform (TPCP) がリリースされたので、Cisco LoRaWAN Gateway (IXM) を接続してみる。
 
 IXMのコンフィグは終わらせておく。
-例えば、[Cisco LoRaWAN Gatewayのコンフィグ](/articles/lorawan-cisco-gateway-config)を参照のこと。
+例えば、[Cisco LoRaWAN Gatewayのコンフィグ](/tanupoo/articles/lorawan-cisco-gateway-config)を参照のこと。
 公式は、[こちら](https://www.cisco.com/c/ja_jp/support/routers/interface-module-lorawan/series.html)。
 
 ## TPCPにアカウントを作る。
