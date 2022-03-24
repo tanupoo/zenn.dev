@@ -1,22 +1,29 @@
 ---
-title: "LoRaWAN: Cisco LoRaWAN Gatewayのコンフィグ"
-emoji: ""
+title: "Cisco LoRaWAN Gatewayのコンフィグの例"
+emoji: "🦝"
 type: "tech"
 topics: [Cisco, LoRaWAN]
 published: false
+created: 2022-03-17
 ---
 
-created: 2022-03-17
+[Cisco LoRaWAN Gateway](https://www.cisco.com/c/ja_jp/products/collateral/se/internet-of-things/datasheet-c78-737307.html) (IXM) のコンフィグの例。
 
-Cisco LoRaWAN Gateway (IXM) のコンフィグの例。
+詳細は、[公式](https://www.cisco.com/c/ja_jp/support/routers/interface-module-lorawan-868mhz-915mhz/model.html)を参照すること。
+
+下記、参考程度に。
 
 - 他のシスコ製品と同様に特権モードで設定する。
+- 特権ユーザ名は予測しづらい名前がよい。
+    + 下記例ではマスクしてある。
 - sshのポート番号は変えた方がよい。
-- ユーザ名は予測しづらい名前がよい。
-- dhcpを使う場合は、*ip address dhcp* とする。
 - *ip ssh admin-access* は必要な時だけ使う。
 
-参考程度に。
+例では、static IPv4アドレス *10.0.0.7* を使っている。
+DHCPを使う場合は、*ip address dhcp* とする。
+IPv6は未サポート。
+
+`GW#` は、IXMのCLIのプロンプト。 hostnameを変えると変わる。
 
 ```
 GW#show running-config
@@ -36,7 +43,7 @@ interface FastEthernet 0/1
 !
 ip default-gateway 10.0.0.1
 !
-username yosokusidurai password 8 ****
+username **** password 8 ****
 !
 ip ssh port 53127
 !
