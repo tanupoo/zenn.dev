@@ -1,6 +1,6 @@
 ---
 title: "Mozilla Hubs: ストリーマーモードを使ってみる"
-emoji: ""
+emoji: "🦝"
 type: "tech"
 topics: [MozillaHubs, Blender, VR]
 published: true
