@@ -4,9 +4,8 @@ emoji: ""
 type: "tech"
 topics: [Cisco, Webex]
 published: false
+created: "2022-02-25"
 ---
-
-created: 2022-02-25
 
 [README](https://github.com/webex/webex-js-sdk#samples)に書いてある通り、 https://js.samples.s4d.io/ でサンプルが試せるけど、動作を調べるには手元で試したい。
 
@@ -308,8 +307,6 @@ addMedia()で、meeting.addMedia()呼び出しのあと、meetingオブジェク
 
 ## app.js: トークンの取得
 
-2022-02-26
-
 browser-plugin-meetings/index.htmlにCredentialsを入力してから webex.init()ボタンを押す。
 ボタンには webex.init()と書いてあるけど実際はapp.jsでEventリスナーが仕込んであって initWebex()が先に呼ばれる。
 
@@ -343,8 +340,6 @@ Webex.init()は webex/src/webex.jsで定義されていて、new Webex(attrs)し
 Webex()の本体は WebexCore.extend()で、@webex/webex-coreで定義されている。
 
 ## js-sdkの動作を調べる。
-
-2022-02-26
 
 samples/browser-plugin-meetings/index.html を起点に低レベル関数を調べる。
 fetch()ではなく、https://github.com/naugtur/xhr を使っていた。

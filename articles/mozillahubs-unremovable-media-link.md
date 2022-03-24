@@ -3,17 +3,18 @@ title: "mozilla hubs: 消えない Media Link"
 emoji: ""
 type: "tech"
 topics: [MozillaHubs]
-published: false
+published: true
+created: "2022-03-16"
 ---
 
-created: 2022-03-16
-
 blenderで作ったメッシュを使いながら、わりと大きな部屋を作るとたまに図のような Broken Media Link と表示された謎のオブジェクトが現れる。
-![](https://storage.googleapis.com/zenn-user-upload/91eacf9f3889-20220316.png)
+![](/images/mozillahubs-unremovable-media-link-001.png)
 拡大するとこんな感じ。
-![](https://storage.googleapis.com/zenn-user-upload/eb190f8fb9da-20220316.png)
+![](/images/mozillahubs-unremovable-media-link-002.png)
 
-blenderで、下記をチェックしてみる。
+mozilla spokeでは消すことができない。
+
+blenderで、下記をチェックしてみると消える場合がある。
 
 - メッシュのオリジンが面や辺にない。
   + メッシュから離れた位置にオリジンがあるオブジェクトを使うとこうなる場合がある。
