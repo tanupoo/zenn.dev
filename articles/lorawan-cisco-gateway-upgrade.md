@@ -3,7 +3,7 @@ title: "Cisco LoRaWAN Gatewayのファームウエアをアップグレードし
 emoji: "🦝"
 type: "tech"
 topics: [Cisco, LoRaWAN]
-published: false
+published: true
 created: "2022-03-17"
 ---
 

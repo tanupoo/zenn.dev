@@ -1,12 +1,11 @@
 ---
 title: "Godot: Input Mapの Physical Keyと Keyの違い"
-emoji: ""
+emoji: "🦝"
 type: "tech"
 topics: [Godot]
-published: false
+published: true
+created: "2022-02-21"
 ---
-
-created: 2022-02-21
 
 Project Settings → Input Map で GDScriptから参照するキーの名前を定義できる。
 

@@ -1,6 +1,6 @@
 ---
 title: "Webex Meetings: webex-js-sdk"
-emoji: ""
+emoji: "🦝"
 type: "tech"
 topics: [Cisco, Webex]
 published: false

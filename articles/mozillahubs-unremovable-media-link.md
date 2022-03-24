@@ -1,6 +1,6 @@
 ---
 title: "mozilla hubs: 消えない Media Link"
-emoji: ""
+emoji: "🦝"
 type: "tech"
 topics: [MozillaHubs]
 published: true
