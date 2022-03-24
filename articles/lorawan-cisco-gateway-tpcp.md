@@ -7,8 +7,7 @@ published: true
 created: "2022-03-17"
 ---
 
-Actility ThingPark Community Platform (TPCP) がリリースされたので、
-Cisco LoRaWAN Gateway (IXM) を接続してみる。
+Actility ThingPark Community Platform (TPCP) がリリースされたので、Cisco LoRaWAN Gateway (IXM) を接続してみる。
 
 IXMのコンフィグは終わらせておく。
 例えば、[Cisco LoRaWAN Gatewayのコンフィグ](/articles/lorawan-cisco-gateway-config.md)を参照のこと。
@@ -100,7 +99,7 @@ GW(config)#packet-forwarder stop
 Stopped packet-forwarder
 ```
 
-LRRをお起動する。
+LRRを起動する。
 
 ```
 GW(config)#packet-forwarder start
