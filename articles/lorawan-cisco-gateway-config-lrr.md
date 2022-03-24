@@ -12,7 +12,7 @@ created: "2022-03-17"
 
 LRRは、Actility製LoRaWAN Packet Forwarderのこと。
 IXMのファームウエアは v2.3.0。
-IXMのファームウエアのアップグレードは、[Cisco LoRaWAN Gatewayのファームウエアをアップグレードしてみる](/articles/lorawan-cisco-gateway-upgrade.md)を参考に。
+IXMのファームウエアのアップグレードは、[Cisco LoRaWAN Gatewayのファームウエアをアップグレードしてみる](/articles/lorawan-cisco-gateway-upgrade)を参考に。
 
 **NSは TPCPを想定しているので注意。 TPWやTPEは対象外。**
 
