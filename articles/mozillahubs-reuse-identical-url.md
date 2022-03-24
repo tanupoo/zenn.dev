@@ -1,5 +1,5 @@
 ---
-title: "mozilla hubs: 同じRoom URLを使い回す。 "
+title: "Mozilla Hubs: 同じRoom URLを使い回す。 "
 emoji: "🦝"
 type: "tech"
 topics: [MozillaHubs]

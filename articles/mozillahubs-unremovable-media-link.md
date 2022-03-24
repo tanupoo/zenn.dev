@@ -1,5 +1,5 @@
 ---
-title: "mozilla hubs: 消えない Media Link"
+title: "Mozilla Hubs: 消えない Media Link"
 emoji: "🦝"
 type: "tech"
 topics: [MozillaHubs]
