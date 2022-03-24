@@ -1,15 +1,19 @@
 ---
 title: "Mozilla Hubs: カメラを使ってみる。"
-emoji: ""
+emoji: "🦝"
 type: "tech"
 topics: [MozillaHubs, Blender, VR]
-published: false
+published: true
+created: "2022-03-04"
 ---
 
-created: 2022-03-04
+Mozilla Hubsで、カメラや鏡の様なことができるらしいので試してみる。
+
+仕組みとしては、カメラオブジェクトで切り取った画像を、別のオブジェクトに投影させる感じ。
 
 ## blenderでの作成方法
 
+- blenderの基本操作は理解しているものとする。
 - Y軸マイナス方向を手前にすると楽。
     + ギズモのYマイナスを押すとさらに楽。
 - カメラを追加して選択する。
@@ -55,9 +59,10 @@ created: 2022-03-04
 
 ターゲットマテリアルのShadingと Overrideの組み合わせで効果を調べてみた。
 
-![](https://storage.googleapis.com/zenn-user-upload/1e7eed71d2a4-20220306.png)
+![](/images/mozillahubs-camera-object-001.png)
 
-結局、Emissionを使わないとスクリーンが暗くなるので使ったほうがいい。そしてEmissionの上書きにチェックをしないとEmissionから入ってきたBase Mapが上書きされないのでチェックするのがいい。
+結局、Emissionを使わないとスクリーンが暗くなるので使ったほうがいい。
+そしてEmissionの上書きにチェックをしないとEmissionから入ってきたBase Mapが上書きされないのでチェックするのがいい。
 
 まとめると、
 - ShadingにTexture ImageとEmissionを追加する。

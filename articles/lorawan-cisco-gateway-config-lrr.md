@@ -4,7 +4,7 @@ emoji: "🦝"
 type: "tech"
 topics: [Cisco, LoRaWAN, Actility, ThingPark]
 published: false
-created: 2022-03-17
+created: "2022-03-17"
 ---
 
 [Cisco LoRaWAN Gateway](https://www.cisco.com/c/ja_jp/products/collateral/se/internet-of-things/datasheet-c78-737307.html) (IXM)
