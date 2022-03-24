@@ -1,5 +1,5 @@
 ---
-title: "Mozilla Hubs: シーンのパラメータを変える"
+title: "Mozilla Hubs: シーンのパラメータを指定する"
 emoji: "🦝"
 type: "tech"
 topics: [MozillaHubs, Blender, VR]
