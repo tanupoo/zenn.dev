@@ -1,5 +1,5 @@
 ---
-title: "Cisco LoRaWAN Gatewayのコンフィグの例"
+title: "Cisco LoRaWAN Gatewayの設定の例"
 emoji: "🦝"
 type: "tech"
 topics: [Cisco, LoRaWAN]
@@ -7,7 +7,7 @@ published: true
 created: "2022-03-17"
 ---
 
-[Cisco LoRaWAN Gateway](https://www.cisco.com/c/ja_jp/products/collateral/se/internet-of-things/datasheet-c78-737307.html) (IXM) のコンフィグの例。
+[Cisco LoRaWAN Gateway](https://www.cisco.com/c/ja_jp/products/collateral/se/internet-of-things/datasheet-c78-737307.html) (IXM) の設定の例。
 
 詳細は、[公式](https://www.cisco.com/c/ja_jp/support/routers/interface-module-lorawan-868mhz-915mhz/model.html)を参照すること。
 

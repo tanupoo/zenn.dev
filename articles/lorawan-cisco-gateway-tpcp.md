@@ -9,8 +9,8 @@ created: "2022-03-17"
 
 Actility ThingPark Community Platform (TPCP) がリリースされたので、Cisco LoRaWAN Gateway (IXM) を接続してみる。
 
-IXMのコンフィグは終わらせておく。
-例えば、[Cisco LoRaWAN Gatewayのコンフィグ](/tanupoo/articles/lorawan-cisco-gateway-config)を参照のこと。
+IXMの設定は終わらせておく。
+例えば、[Cisco LoRaWAN Gatewayの設定の例](/tanupoo/articles/lorawan-cisco-gateway-config)を参照のこと。
 公式は、[こちら](https://www.cisco.com/c/ja_jp/support/routers/interface-module-lorawan/series.html)。
 
 ## TPCPにアカウントを作る。
@@ -120,9 +120,9 @@ NS側で Status が ACTIVEになれば成功。
 
 ![](/images/lorawan-cisco-gateway-tpcp-016.png)
 
-## LRR起動後のIXMのコンフィグ
+## LRR起動後のIXMの設定
 
-IPsecのコンフィグが追加されている。
+IPsecの設定が追加されている。
 
 ```
 GW#show running-config 
@@ -244,7 +244,7 @@ packet-forwarder firmware validation failed
 ```
 
 LRCまでの接続性がない。
-基本的なチェックをしてもつながらない場合は、IPsecのコンフィグが間違っている可能性がある。
+基本的なチェックをしてもつながらない場合は、IPsecの設定が間違っている可能性がある。
 
 ## Trouble Shooting: One session to container console is already open.
 
@@ -293,205 +293,3 @@ IXMを再起動する。
 
 radio off になっている。
 
-## ThingParkのドキュメント
-
-全体の流れは下記を参照すること。
-[Configuring the base station LRR ](https://docs.thingpark.com/thingpark-enterprise/7.1/Content/BS-installation-guides/Configure-bs-lrr.htm)
-
-IXMでの LRRのコンフィグの詳細は下記を参照すること。
-Installing the LRR packageの[Cisco IXM](https://docs.thingpark.com/thingpark-enterprise/7.1/Content/BS-installation-guides/Cisco-IXM.htm)
-
-下記、ざっと目を通して流れをつかんでおくのがよい。
-[Installing the ThingPark image on your base station](https://docs.thingpark.com/thingpark-enterprise/7.1/Content/BS-installation-guides/Install-ThingPark-image.htm)
-
-以降は、上記ドキュメントを補完する目的で作った。参考程度に。
-
-## LRRファームウエアを入手する。
-
-LRRは、Actility謹製のLoRaWAN Packet Forwarderのこと。
-TPW,TPE,TPCP,パートナーなどからLRRのファームウエアを入手する。
-
-TPCPからは、GWの登録画面でモデルを入力するとダウンロードできるようになる。
-![](/images/lorawan-cisco-gateway-tpcp-010.png)
-
-2022年3月17日時点、TPCPからダウンロードしたファイル名は
-*`TP_Enterprise_BS_Image_cisco.CISCO_CIXM.1_any_TPCP_SAAS_2.6.53_v1.0_no-keygen.tar.gz`* だった。
-
-展開するとこんな感じ。
-
-```
-% tar ztvf TP_Enterprise_BS_Image_cisco.CISCO_CIXM.1_any_TPCP_SAAS_2.6.53_v1.0_no-keygen.tar.gz
-drwxr-xr-x  0 root   root        0 May 28  2021 ./
--rw-r--r--  0 root   root  1471990 May 28  2021 ./TP_Enterprise_BS_Image_cisco.CISCO_CIXM.1_any_TPCP_SAAS_2.6.53_v1.0_no-keygen.cpkg
--rwxr-xr-x  0 root   root 90621469 May 28  2021 ./ixm_mdm_i_k9-2.2.0.tar.gz
--rw-r--r--  0 root   root      451 May 28  2021 ./lrr-opk.pubkey
-```
-
-LRRのバージョンは、2.6.53になっている。
-
-## LRRをインストールする。
-
-ファームウエアと公開鍵を flashへコピーする。
-10.0.0.1はTFTPサーバ。
-
-```
-GW#copy tftp://10.0.0.1/lrr-opk.pubkey flash:
-!
-
-Download 451 bytes took 00:00:01 [hh:mm:ss]
-```
-
-```
-GW#copy tftp://10.0.0.1/TP_Enterprise_BS_Image_cisco.CISCO_CIXM.1_any_TPCP
-_SAAS_2.6.53_v1.0_no-keygen.cpkg flash:
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-Download 1471990 bytes took 00:00:07 [hh:mm:ss]
-```
-
-ファームウエアを検証するための公開鍵 *lrr-opk.pubkey* をインストールする。
-
-```
-GW#configure terminal 
-GW(config)#packet-forwarder install pubkey lrr-opk.pubkey
-Installed successfully
-```
-
-続いてファームウエアをコピーする。
-
-```
-GW(config)#packet-forwarder install firmware flash:TP_Enterprise_BS_Image_cisco.CISCO_CIXM.1_any_TPCP_SAAS_2.6.53_v1.0_no-keygen.cpkg
-packet-forwarder firmware validation successful 
-Starting new pktfwd-firmware...
-Installed successfully
-GW(config)#exit
-```
-
-インストール直後のLRRの状態。
-
-```
-GW#show packet-forwarder status
-Status : Stopped
-```
-
-```
-GW#show packet-forwarder info
-PublicKeyStatus : Installed
-FirmwareStatus : Installed
-PacketFwdVersion : 2.6.53
-LRRID : 
-LRRUUID : 005F86-024B069606FCF
-PartnerID : ----
-```
-
-ここで **LRRUUID**をメモっておく。
-GWの登録の時に必要になる。
-
-## コンテナへのログイン方法
-
-LRRは、IXMの中のコンテナ(LXC)内で動作する。
-LRRのコンフィグのために、コンテナにログインする必要がある。
-
-コンテナにログインするには、IXMのIOSのプロンプトから下記の様にする。
-
-```
-GW#request shell container-console 
-Enter System Password:  
-
-Connected to tty 0
-Type <Ctrl+a q> to exit the console, <Ctrl+a Ctrl+a> to enter Ctrl+a itself
-```
-
-## LRR管理ユーザを作成する。
-
-コンテナ側からIOSを操作するために必要になる。
-GWの特権ユーザと同じでも動作はする。
-事故を防ぐためにLRR管理用のアカウントを作るのがおすすめ。
-
-IOS側でユーザを作る。
-例では、ユーザ名 hogehoge、パスワード puyopuyo
-
-```
-GW#configure terminal 
-GW(config)#username hogehoge password puyopuyo
-chpasswd: password for 'hogehoge' changed
-```
-
-コンテナにログインしてcredential.txtを編集する。
-
-```
-bash-3.2# vi $ROOTACT/usr/etc/lrr/credentials.txt 
-```
-
-3行書く。上から enableパスワード, LRR管理用ユーザ名, そのパスワード。
-
-    enable password
-    LRR admin username
-    LRR admin's password
-
-## SUPLOGについて
-
-LRRのCursesベースのコンフィグツール。
-
-端末のサイズは 80x35 くらいが経験的にちょうどよい。
-80x24だとズレることがある。
-
-コンテナの中から起動する。
-
-```
-bash-3.2# su support 
-```
-
-ROLLBACKできる作業をしたら、かならずCOMMITする。
-
-System connfigurationのNetworkからIPアドレスなどを変更すると接続が切れてしまう。
-そうすると、コンテナのセッションが残ってしまい、
-IOSからコンテナへログインができなくなるので注意が必要。
-
-SUPLOGに限った話ではないが、
-オンサイトでコンソールケーブル経由でつないでから作業するのが安全でよい。
-
-例えば、SUPLOGでdhcpとしてコンフィグして、
-IOS側でスタティックにコンフィグしていると、
-IOSのコンフィグが上書きされてしまい、
-作業中に接続が切れたりしてトラブルの元になる。
-
-- 参考
-    + [Connecting to SUPLOG](https://docs.thingpark.com/thingpark-enterprise/6.1/Content/BS-installation-guides/Connect-to-SUPLOG.htm#_Ref83035792)
-    + [Apply/Commit/Rollback mechanism](https://docs.thingpark.com/thingpark-enterprise/6.1/Content/BS-installation-guides/Apply-commit-rollback-mechanism.htm#_Ref82616372)
-
-## IPsecトンネルのための Publik Keyを作る。
-
-SUPLOG画面に入ったら、
-*Identifiers* → *Generate new key pair* から、
-Enter 'yes' to confirm で **yes** と入力して *Confirm* を選択する。
-![](/images/lorawan-cisco-gateway-tpcp-011.png)
-![](/images/lorawan-cisco-gateway-tpcp-012.png)
-
-keys generated と表示されたら **OK** を選択する。
-![](/images/lorawan-cisco-gateway-tpcp-013.png)
-
-*Get public key* を選択すると、
-Public KeyがASCII-armored形式で表示されるのでコピーしておく。
-BEGIN PUBLIC KEYとEND PUBLIC KEYは含めなくてもよい。
-![](/images/lorawan-cisco-gateway-tpcp-014.png)
-![](/images/lorawan-cisco-gateway-tpcp-015.png)
-
-- 参照: [Generating and retrieving the base station’s Public Key](https://docs.thingpark.com/thingpark-enterprise/6.1/Content/BS-installation-guides/Generate-retrieve-bs-public-key.htm#_Ref82102684)
-- 参考: [Configuring PKI](https://docs.thingpark.com/thingpark-enterprise/6.1/Content/BS-installation-guides/Configure-PKI.htm#_Ref82102686)
-
-## アンテナを設定する。
-
-Cisco LoRaWAN GWのアンテナは2種類ある。
-
-SUPLOGの *Radio configuration* → *Set Power Transmission Adjustment* から値を入れる。
-
-- ANT-WPAN-OM-OUT-Nの場合
-> Antenna number: 0
-> Antenna gain: 4.0
-> Cable attenuation: 0.5
-
-- ANT-LPWA-DB-O-N-5の場合
-> Antenna number: 0
-> Antenna gain: 5.4
-> Cable attenuation: 1.2
