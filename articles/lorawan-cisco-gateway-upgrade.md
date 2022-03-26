@@ -7,8 +7,7 @@ published: true
 created: "2022-03-17"
 ---
 
-[Cisco LoRaWAN Gateway](https://www.cisco.com/c/ja_jp/products/collateral/se/internet-of-things/datasheet-c78-737307.html) (IXM)
-のファームウエアを v2.1.0.1から **v2.3.0**へアップグレードしてみる。
+[Cisco LoRaWAN Gateway](https://www.cisco.com/c/ja_jp/products/collateral/se/internet-of-things/datasheet-c78-737307.html) (IXM)のファームウエアを v2.1.0.1から **v2.3.0**へアップグレードしてみる。
 
 詳細は、[公式](https://www.cisco.com/c/ja_jp/support/routers/interface-module-lorawan-868mhz-915mhz/model.html)を参照すること。
 
@@ -40,23 +39,19 @@ https://www.cisco.com/c/ja_jp/support/index.html
 
 まず、ファームウエアを GWにコピーする。
 
-コピーせずにアップグレードする方法もあるが、
-トラブルが起きた場合の切り分けが面倒なのでここでは一旦コピーする。
+コピーせずにアップグレードする方法もあるが、トラブルが起きた場合の切り分けが面倒なのでここでは一旦コピーする。
 
 ファイルサーバ等からコピーするには FTPか TFTPを使う。
 
-サーバのOS標準のTFTPのセットアップは意外と面倒なので、
-[tftpy](https://github.com/msoulier/tftpy) が簡単でおすすめ。
+サーバのOS標準のTFTPのセットアップは意外と面倒なので、[tftpy](https://github.com/msoulier/tftpy) が簡単でおすすめ。
 ファームウエアが置いてあるディレクトリを指定して起動する。
-下記は、ファームウエアが置いてあるディレクトリと
-起動するディレクトリが同じ場合。
+下記は、ファームウエアが置いてあるディレクトリと起動するディレクトリが同じ場合。
 
 ```
 % tftpy_server.py -r .
 ```
 
-ファイルサーバ側でtftpyを起動したら、
-GWにログインして *enable*コマンドで特権モードにする。
+ファイルサーバ側でtftpyを起動したら、GWにログインして *enable*コマンドで特権モードにする。
 `GW#` は、IXMのCLIのプロンプト。
 
 下記、GWのIPアドレスを *10.0.0.7* としている。
@@ -85,9 +80,7 @@ GW#
 ```
 
 次に、*copy* コマンドを使ってコピーする。
-下記は、
-ファームウエアのファイル名は *ixm_mdm_i_k9-2.3.0.tar.gz* で、
-ファイルサーバのIPアドレスが 10.0.0.1 の場合。
+下記は、ファームウエアのファイル名は *ixm_mdm_i_k9-2.3.0.tar.gz* で、ファイルサーバのIPアドレスが 10.0.0.1 の場合。
 
 ```
 GW#copy tftp://10.0.0.1/ixm_mdm_i_k9-2.3.0.tar.gz flash:
@@ -151,8 +144,7 @@ Reloading ...
 切れた後、6-10分くらいで ping が通る様になる。
 数分後、sshで入れることを確認する。
 
-primary と backup のファームウエアを揃えるには、
-もう一度、同じコマンドを使ってアップグレードする。
+primary と backup のファームウエアを揃えるには、もう一度、同じコマンドを使ってアップグレードする。
 これを twice upgradeと呼ぶ。
 普通は揃える。
 
