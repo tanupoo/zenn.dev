@@ -10,10 +10,10 @@ created: "2022-03-17"
 [Cisco LoRaWAN Gateway](https://www.cisco.com/c/ja_jp/products/collateral/se/internet-of-things/datasheet-c78-737307.html) (IXM)で LRRを動かしてみる。
 
 LRRは、Actility製LoRaWAN Packet Forwarderのこと。
-IXM自体の設定は、[Cisco LoRaWAN Gatewayの設定の例](/tanupoo/articles/lorawan-cisco-gateway-config)を参考に。
+IXM自体の設定は、"[Cisco LoRaWAN Gatewayの設定の例](/tanupoo/articles/lorawan-cisco-gateway-config)"を参考に。
 
 IXMのファームウエアは v2.3.0を使った。
-IXMのファームウエアのアップグレードは、[Cisco LoRaWAN Gatewayのファームウエアをアップグレードしてみる](/tanupoo/articles/lorawan-cisco-gateway-upgrade)を参考に。
+IXMのファームウエアのアップグレードは、"[Cisco LoRaWAN Gatewayのファームウエアをアップグレードしてみる](/tanupoo/articles/lorawan-cisco-gateway-upgrade)"を参考に。
 
 **LoRaWAN NSは TPCPを想定している。 TPWやTPEは対象外。**
 
@@ -21,11 +21,11 @@ IXMのファームウエアのアップグレードは、[Cisco LoRaWAN Gateway�
 
 ThingParkは [Actility](https://www.actility.com/)の LoRaWANソリューションのブランド名。
 
-全体の流れは、[Configuring the base station LRR ](https://docs.thingpark.com/thingpark-enterprise/7.1/Content/BS-installation-guides/Configure-bs-lrr.htm)を参照すること。
+全体の流れは、"[Configuring the base station LRR ](https://docs.thingpark.com/thingpark-enterprise/7.1/Content/BS-installation-guides/Configure-bs-lrr.htm)"を参照すること。
 
-IXMでの LRRの設定方法の詳細は、Installing the LRR packageの[Cisco IXM](https://docs.thingpark.com/thingpark-enterprise/7.1/Content/BS-installation-guides/Cisco-IXM.htm)を参照すること。
+IXMでの LRRの設定方法の詳細は、Installing the LRR packageの"[Cisco IXM](https://docs.thingpark.com/thingpark-enterprise/7.1/Content/BS-installation-guides/Cisco-IXM.htm)"を参照すること。
 
-[Installing the ThingPark image on your base station](https://docs.thingpark.com/thingpark-enterprise/7.1/Content/BS-installation-guides/Install-ThingPark-image.htm)を、ざっと目を通して流れをつかんでおくのがよい。
+"[Installing the ThingPark image on your base station](https://docs.thingpark.com/thingpark-enterprise/7.1/Content/BS-installation-guides/Install-ThingPark-image.htm)"を、ざっと目を通して流れをつかんでおくのがよい。
 
 以降は、上記ドキュメントを補完する目的で作った。参考程度に。
 
