@@ -2,7 +2,7 @@
 title: "Cisco LoRaWAN Gateway: LRRを動かしてみる。"
 emoji: "🦝"
 type: "tech"
-topics: [Cisco, LoRaWAN, Actility, ThingPark]
+topics: [Cisco, LoRaWAN, Actility]
 published: true
 created: "2022-03-17"
 ---
