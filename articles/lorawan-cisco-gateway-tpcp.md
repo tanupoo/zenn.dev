@@ -10,7 +10,7 @@ created: "2022-03-17"
 Actility ThingPark Community Platform (TPCP) がリリースされたので、Cisco LoRaWAN Gateway (IXM) を接続してみる。
 
 IXMの設定は終わらせておく。
-例えば、[Cisco LoRaWAN Gatewayの設定の例](/tanupoo/articles/lorawan-cisco-gateway-config)を参照のこと。
+例えば、"[Cisco LoRaWAN Gatewayの設定の例](/tanupoo/articles/lorawan-cisco-gateway-config)"を参照のこと。
 公式は、[こちら](https://www.cisco.com/c/ja_jp/support/routers/interface-module-lorawan/series.html)。
 
 ## TPCPにアカウントを作る。
@@ -46,13 +46,13 @@ CiscoのGWを登録する画面が表示されるので、初めにモデルを�
 
 続いて、
 - **Name**: GWの名前を入力する。何でもよい。後から変えられる。
-- **LRR-UUID**: IXM-CLIで *show packet-forwarder info*コマンドなどで表示される **LRRUUID** を入力する。取得方法は、[Cisco LoRaWAN Gateway: LRRを動かしてみる。](/tanupoo/articles/lorawan-cisco-gateway-config-lrr)を参照のこと。
+- **LRR-UUID**: IXM-CLIで *show packet-forwarder info*コマンドなどで表示される **LRRUUID** を入力する。取得方法は、"[Cisco LoRaWAN Gateway: LRRを動かしてみる。](/tanupoo/articles/lorawan-cisco-gateway-config-lrr)"を参照のこと。
 - **RF Region**: *Japan 8-channels 20mW*を選択する。後から変えられる。
 - **IPsec**: enabledを選択する。
 ![](/images/lorawan-cisco-gateway-tpcp-007.png)
 
 - **Disable public key authentication**: チェックが**外れている**ことを確認する。
-- **Public key**: SUPLOGの *Get public key* で取得した公開鍵を入力する。取得方法は、[Cisco LoRaWAN Gateway: LRRを動かしてみる。](/tanupoo/articles/lorawan-cisco-gateway-config-lrr)を参照のこと。
+- **Public key**: SUPLOGの *Get public key* で取得した公開鍵を入力する。取得方法は、"[Cisco LoRaWAN Gateway: LRRを動かしてみる。](/tanupoo/articles/lorawan-cisco-gateway-config-lrr)"を参照のこと。
 - **Mode**: GPSシグナルが取れる場所に置いてあれば、*Onboard GNSS position*を選択するとよい。後から変えられる。
 ![](/images/lorawan-cisco-gateway-tpcp-008.png)
 
