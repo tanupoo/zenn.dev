@@ -11,7 +11,7 @@ Actility ThingPark Community Platform (TPCP) がリリースされたので、Ci
 
 ## 前準備
 
-TPCPにはアカウントを作っておく。"[TPCPにアカウントを作る](/tanupoo/articles/lorawan-tpcp-create-account)"を参考に。
+TPCPにアカウントを作っておく。"[TPCPにアカウントを作る](/tanupoo/articles/lorawan-tpcp-create-account)"を参考に。
 IXMの設定は終わらせておく。
 例えば、"[Cisco LoRaWAN Gatewayの設定の例](/tanupoo/articles/lorawan-cisco-gateway-config)"を参照のこと。
 公式は、[こちら](https://www.cisco.com/c/ja_jp/support/routers/interface-module-lorawan/series.html)。
@@ -19,10 +19,9 @@ IXMの設定は終わらせておく。
 下記ページに一連の流れが書かれてある。
 https://community.thingpark.org/index.php/build-your-first-end-to-end-use-case/
 
-このページの**Step 4: Create the Gateway on Your Account**をクリックしてGWを登録する。
-
 ## TPCPに IXMを登録する。
 
+GWの登録は、TPCPの[ダッシュボード](https://community.thingpark.io)にアクセスする。
 ダッシュボードの左のリストの中の **Base Stations**をクリックすると **Create**が現れるのでクリックする。
 ![](/images/lorawan-cisco-gateway-tpcp-003.png)
 
