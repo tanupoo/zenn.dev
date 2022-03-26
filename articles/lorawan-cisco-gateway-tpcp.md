@@ -45,15 +45,15 @@ CiscoのGWを登録する画面が表示されるので、初めにモデルを�
 ![](/images/lorawan-cisco-gateway-tpcp-006.png)
 
 続いて、
-- **Name**: GWの名前を入力する。
-- **LRR-UUID**: IXMで *show packet-forwarder info*コマンドなどで表示される **LRRUUID** をここ入力する。
-- **RF Region**: *Japan 8-channels 20mW*を選択する。
+- **Name**: GWの名前を入力する。何でもよい。後から変えられる。
+- **LRR-UUID**: IXM-CLIで *show packet-forwarder info*コマンドなどで表示される **LRRUUID** を入力する。取得方法は、[Cisco LoRaWAN Gateway: LRRを動かしてみる。](/tanupoo/articles/lorawan-cisco-gateway-config-lrr)を参照のこと。
+- **RF Region**: *Japan 8-channels 20mW*を選択する。後から変えられる。
 - **IPsec**: enabledを選択する。
 ![](/images/lorawan-cisco-gateway-tpcp-007.png)
 
-- **Disable public key authentication**: チェックが外れていることを確認する。
-- **Public key**: SUPLOGの *Get public key* から取得する。(後述)
-- **Mode**: GPSシグナルが取れる場所に置いてあれば、*Onboard GNSS position*を選択するとよい。
+- **Disable public key authentication**: チェックが**外れている**ことを確認する。
+- **Public key**: SUPLOGの *Get public key* で取得した公開鍵を入力する。取得方法は、[Cisco LoRaWAN Gateway: LRRを動かしてみる。](/tanupoo/articles/lorawan-cisco-gateway-config-lrr)を参照のこと。
+- **Mode**: GPSシグナルが取れる場所に置いてあれば、*Onboard GNSS position*を選択するとよい。後から変えられる。
 ![](/images/lorawan-cisco-gateway-tpcp-008.png)
 
 **CREATE**をクリックすると登録が完了する。
@@ -75,8 +75,8 @@ IXMでLRRを動かす前に、IXMが接続されているネットワークを�
         + slrc2-poc.thingpark.com 35.180.224.119
 
 - IPsecを使わない場合
-    + 要検証
-    + FTP (TCP port 21)
+    + 動きそうだけど未検証。
+    + FTP (TCP port 21)を通す必要がある。
 
 ## LRRを起動する。
 
@@ -178,12 +178,15 @@ GW#show packet-forwarder log name trace 250
 ```
 
 コンテナにログインすると過去7日間のログを見ることができる。
-UNIX系OSを使い慣れていない人はお勧めしない。自己責任でどうぞ。
+UNIX系OSを使い慣れていない人はお勧めしない。自己責任で。
 
 *$ROOTACT/var/log/lrr/TRACE.log* に LRRのログが記録される。
 
 リアルタイムなログは下記コマンドで見ることができる。
 終了は `Ctrl+C` を押す。
+
+ターミナルエミュレータによっては `Ctrl+C`が効かない場合がある。
+sttyで設定する。自己責任で。
 
 ```
 bash-3.2# tail -f $ROOTACT/var/log/lrr/TRACE.log
