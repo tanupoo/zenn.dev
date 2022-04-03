@@ -12,8 +12,8 @@ Actility ThingPark Community Platform (TPCP) がリリースされたので、Ci
 ## 前準備
 
 TPCPにアカウントを作っておく。"[TPCPにアカウントを作る](/tanupoo/articles/lorawan-tpcp-create-account)"を参考に。
-IXMの設定は終わらせておく。
-例えば、"[Cisco LoRaWAN Gatewayの設定の例](/tanupoo/articles/lorawan-cisco-gateway-config)"を参照のこと。
+IXMの設定は終わらせておく。例えば、"[Cisco LoRaWAN Gatewayの設定の例](/tanupoo/articles/lorawan-cisco-gateway-config)"を参照のこと。
+LRRはインストールしておく。インストールは、例えば、"[Cisco LoRaWAN Gateway: LRRを動かしてみる。](/tanupoo/articles/lorawan-cisco-gateway-config-lrr)"を参照する。
 公式は、[こちら](https://www.cisco.com/c/ja_jp/support/routers/interface-module-lorawan/series.html)。
 
 下記ページに一連の流れが書かれてある。
@@ -52,7 +52,7 @@ CiscoのGWを登録する画面が表示されるので、初めにモデルを�
 
 ## ネットワークを準備する。
 
-IXMでLRRを動かす前に、IXMが接続されているネットワークを設定する。
+IXMでLRRを起動する前に、IXMが接続されているネットワークを設定する。
 
 - NTP, DNSを使えるようにする。
     + NTP: UDP 123
