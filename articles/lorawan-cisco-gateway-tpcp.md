@@ -1,5 +1,5 @@
 ---
-title: "LoRaWAN: IXMを TPCPにつないでみる。"
+title: "LoRaWAN: Cisco LoRaWAN Gatewayを TPCPにつないでみる。"
 emoji: "🦝"
 type: "tech"
 topics: [Cisco, LoRaWAN, Actility]
