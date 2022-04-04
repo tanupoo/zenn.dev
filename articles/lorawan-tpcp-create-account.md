@@ -24,6 +24,5 @@ GWやデバイスの登録は、**Step 3: Build your first end-to-end use case**
 
 下記も参考に。
 
-https://zenn.dev/tanupoo/articles/lorawan-cisco-gateway-tpcp
 
 https://zenn.dev/tanupoo/articles/lorawan-tpcp-adding-device
