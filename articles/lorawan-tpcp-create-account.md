@@ -20,7 +20,7 @@ Actility ThingPark Community Platform (TPCP) にアカウントを作ってみ�
 
 興味ある人は、LoRaWANとActilityとThingParkについて知っておいて損はない。
 
-GWやデバイスの登録は、**Step 3: Build your first end-to-end use case** をクリックする。
+GWやデバイスの登録は、**Step 3: Build your first end-to-end use case** をクリックするとガイドが表示される。
 
 下記も参考に。
 
