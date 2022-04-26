@@ -7,15 +7,13 @@ published: true
 created: "2022-04-26"
 ---
 
-少し昔の話だが、2020年12月に Actility ThingPark Community Platform (**TPCP**) がリリースされた。
+少し昔の話だけど、2020年12月に Actility ThingPark Community Platform (**TPCP**) がリリースされた。
 
 https://community.thingpark.org/
 
 最近、日本向けの無線プロファイルの動作確認ができたので、まとめてみる。
 
-ThingParkは、超高機能で多くのキャリアでも採用されている
-LoRaWANネットワークを運用するために必要な
-ネットワーク・サーバを中心としたサービスのこと。
+ThingParkは、超高機能で多くのキャリアでも採用されているLoRaWANネットワークを運用するために必要なネットワーク・サーバを中心としたサービスのこと。
 
 ThingParkの何がすごいって、これまでリリースされてきたLoRaWAN L2スペックの全てに対応していて、国ごとの法規制に従ったプロファイルも多種サポートされている。LoRaWANネットワークの状態を可視化するツールも備わっていて、クラウド版もオンプレ版もある。価格以外は全く文句ない。
 
