@@ -18,11 +18,14 @@ ThingParkは、超高機能で多くのキャリアでも採用されているLo
 ThingParkの何がすごいって、これまでリリースされてきたLoRaWAN L2スペックの全てに対応していて、国ごとの法規制に従ったプロファイルも多種サポートされている。LoRaWANネットワークの状態を可視化するツールも備わっていて、クラウド版もオンプレ版もある。価格以外は全く文句ない。
 
 トライアルをする時に、この価格がボトルネックになっていたケースが多々あった。
+
 が、TPCPはこれらのサービスをまさかの**無料**で使うことができるので、この課題をクリアできる。Actilityさん、太っ腹すぎる。
 
 ## TPCPの制限
 
-- 非営利目的で使用すること。
+- ThingParkに、アカウントが必要。(後述)
+- 非営利目的(*non-profit use*)で使用すること。
+    + 例えば、[STマイクロさんのFUOTAのデモ](https://www.youtube.com/watch?v=WIbV85K9cIs)で TPCPが使われていることを考えると、非営利かどうかの判断に迷った場合は、Actilityさんに聞いてみるのがよいかと思う。
 - ThingParkのサービスに**無料**でアクセスできる。
     + 無料なので止まっても泣かない。
     + SLAが必要な場合は、別のサービスを使う。
@@ -38,6 +41,8 @@ ThingParkの何がすごいって、これまでリリースされてきたLoRaW
     + 500台のGWを個人で用意することは不可能。
 
 ## 次のステップ
+
+まずはアカウントを作ることから始める。
 
 - [TPCPにアカウントを作る](/tanupoo/articles/lorawan-tpcp-create-account)
 - [Cisco LoRaWAN Gatewayを TPCPにつないでみる。](/tanupoo/articles/lorawan-cisco-gateway-tpcp)
