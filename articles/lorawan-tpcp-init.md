@@ -7,7 +7,10 @@ published: true
 created: "2022-04-26"
 ---
 
-Actility ThingPark Community Platform (TPCP) が2020年12月リリースされた。
+少し昔の話だが、2020年12月に Actility ThingPark Community Platform (**TPCP**) がリリースされた。
+
+https://community.thingpark.org/
+
 最近、日本向けの無線プロファイルの動作確認ができたので、まとめてみる。
 
 ThingParkは、超高機能で多くのキャリアでも採用されている
